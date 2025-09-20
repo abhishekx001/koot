@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.footer {
+  background-color: #2e1404;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 60px 40px 30px;
+  text-transform: uppercase;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center columns */
+  text-align: center;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.footer-subtext {
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.footer-badges .footer-badge {
+  background: #6a5f5a;
+  color: white;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-logos img {
+  height: 30px;
+  margin: 10px 5px;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.new {
+  color: #7ccf8e;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.green {
+  color: #7ccf8e;
+  font-size: 12px;
+}
+
+.emoji {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 12px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  text-transform: uppercase;
+}
+
+.footer-bottom a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo-image {
+  width: 120px;
+  margin-bottom: 10px;
+}
