@@ -2,26 +2,43 @@
 
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import TherapyPage from "../components/TherapyPage";
-import TherapistGrid from "../components/TherapistGrid";
-import TherapyServices from "../components/TherapyServices";
+import DepressionPage from "../components/DepressionPage";
+import DepressionSymptoms from "../components/DepressionSymptoms";
+import MalayaliTherapists from "../components/MalayaliTherapists";
 import Footer from "../components/Footer";
+import JourneySection from "../components/JourneySection";
+import BeginToday from "../components/BeginToday";
+import TestimonialsSection from "../components/TestimonialsSection";
+import DepressionFaq from "../components/DepressionFaq";
+import DepressionOverview from "../components/DepressionOverview";
+import MalayaliPsychologists from "../components/MalayaliPsychologists";
+import RelatedConditions from "../components/RelatedConditions";
+import DepressionBlogs from "../components/DepressionBlogs";
 import { FaWhatsapp, FaInstagram, FaLinkedinIn, FaEllipsisH, FaTimes, FaPhone, FaComments } from "react-icons/fa";
 
-const TherapistsPage = () => {
+const DepressionPageRoute = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   return (
     <>
       <Navbar />
-      <TherapyPage />
-      <TherapistGrid />
-      <TherapyServices />
-      <Footer />
+      <DepressionPage />
+      <DepressionSymptoms />
+      <MalayaliTherapists />
+      <JourneySection />
+      <BeginToday />
+        <TestimonialsSection />
+        <DepressionFaq />
+        <div id="what-is-depression">
+          <DepressionOverview />
+        </div>
+        <MalayaliPsychologists />
+        <RelatedConditions />
+        <DepressionBlogs />
+        <Footer />
 
       {/* Social Media Icons - Fixed Position */}
       <div className="fixed top-1/2 right-4 transform -translate-y-1/2 flex flex-col gap-4 text-gray-700 z-40 hidden md:flex">
@@ -98,11 +115,11 @@ const TherapistsPage = () => {
           onClick={toggleMenu}
           className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-colors"
         >
-          {isMenuOpen ? <FaTimes size={24} /> : <FaEllipsisH size={24} />}
+          <FaEllipsisH size={24} />
         </button>
       </div>
     </>
   );
 };
 
-export default TherapistsPage;
+export default DepressionPageRoute;

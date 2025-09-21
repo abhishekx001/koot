@@ -16,6 +16,10 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const toggleDropdown = (index) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -238,7 +242,7 @@ const Navbar = () => {
                                   {subCategories[option]?.map((subOption, subIndex) => (
                                     <Link
                                       key={subIndex}
-                                      href="/"
+                                      href={subOption === "DEPRESSION" ? "/depression" : "/"}
                                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs"
                                     >
                                       {subOption}
@@ -298,56 +302,80 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-lg lg:hidden">
+        <div className="absolute top-full left-0 w-full bg-white shadow-lg lg:hidden z-50">
           <div className="px-4 py-6 space-y-4">
             {menuItems.map((item, index) => (
               <div key={index} className="border-b border-gray-200 pb-4">
-                <button
-                  onClick={() => toggleDropdown(index)}
-                  className="w-full text-left flex items-center justify-between text-gray-800 font-semibold text-sm"
-                >
-                  <span>{item.name}</span>
-                  <svg
-                    className={`w-4 h-4 transition-transform ${openDropdown === index ? "rotate-180" : ""}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                {openDropdown === index && (
-                  <div className="mt-2 pl-4 space-y-2">
-                    {item.options.map((option, optionIndex) => (
-                      <Link
-                        key={optionIndex}
-                        href="/"
-                        className="block text-gray-600 hover:text-gray-800 transition-colors text-sm"
+                {item.options.length > 0 ? (
+                  <>
+                    <button
+                      onClick={() => toggleDropdown(index)}
+                      className="w-full text-left flex items-center justify-between text-gray-800 font-semibold text-sm"
+                    >
+                      <span>{item.name}</span>
+                      <svg
+                        className={`w-4 h-4 transition-transform ${openDropdown === index ? "rotate-180" : ""}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        {option}
-                      </Link>
-                    ))}
-                  </div>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {openDropdown === index && (
+                      <div className="mt-2 pl-4 space-y-2">
+                        {item.options.map((option, optionIndex) => (
+                          <div key={optionIndex}>
+                            {option.includes('>') ? (
+                              <div className="text-gray-600 text-sm font-medium mb-2">
+                                {option}
+                              </div>
+                            ) : (
+                              <Link
+                                href="/"
+                                className="block text-gray-600 hover:text-gray-800 transition-colors text-sm py-1"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {option}
+                              </Link>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href="/therapists"
+                    className="block text-gray-800 font-semibold text-sm py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
                 )}
               </div>
             ))}
             
             {/* Mobile Profile and Button */}
             <div className="flex flex-col space-y-4 pt-4">
-              <Link href="/profile" className="text-gray-800 font-semibold text-sm uppercase">
+              <Link 
+                href="/profile" 
+                className="text-gray-800 font-semibold text-sm uppercase"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 PROFILE
               </Link>
               <button className="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-colors text-sm uppercase">
                 BOOK NOW
               </button>
             </div>
-                </div>
-            </div>
+          </div>
+        </div>
       )}
         </header>
   );

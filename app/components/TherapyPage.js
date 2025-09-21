@@ -5,21 +5,21 @@ const TherapyPage = () => {
   return (
     <div className="min-h-screen bg-white pt-0">
       {/* Main Content Container */}
-      <div className="max-w-4xl mx-auto px-4 py-0">
+      <div className="max-w-4xl mx-auto px-0 md:px-4 py-0">
         {/* Main Content Area */}
         <div className="bg-green-50 rounded-3xl p-1 md:p-2 lg:p-3 pt-20 md:pt-24 lg:pt-28 border border-green-100">
           {/* Main Title */}
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 text-left leading-tight ml-12" style={{fontFamily: 'var(--font-quicksand), sans-serif'}}>
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 text-left leading-tight ml-4 md:ml-12" style={{fontFamily: 'var(--font-quicksand), sans-serif'}}>
             Find your Malayali Psychologist
           </h1>
           
           {/* Subtitle */}
-          <p className="text-sm text-gray-600 mb-5 text-left max-w-3xl font-medium ml-12" style={{fontFamily: 'var(--font-quicksand), sans-serif'}}>
+          <p className="text-sm text-gray-600 mb-5 text-left max-w-3xl font-medium ml-4 md:ml-12" style={{fontFamily: 'var(--font-quicksand), sans-serif'}}>
             Hey, We're happy that you are taking help. Find your therapist
           </p>
 
           {/* Three-Step Process */}
-          <div className="flex flex-col space-y-3 mb-5 ml-12">
+          <div className="flex flex-col space-y-3 mb-5 ml-4 md:ml-12">
             {/* Step 1 */}
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-green-200 rounded-lg flex items-center justify-center relative">
@@ -58,7 +58,7 @@ const TherapyPage = () => {
           </div>
 
           {/* Filter Section */}
-          <div className="ml-12">
+          <div className="ml-4 md:ml-12">
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
               <p className="text-gray-700 text-sm font-medium" style={{fontFamily: 'var(--font-quicksand), sans-serif'}}>Need a better view?</p>
               

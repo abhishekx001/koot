@@ -9,9 +9,9 @@ const Footer = () => {
     >
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center lg:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-left lg:text-left">
           {/* Column 1: Logo & Info */}
-          <div className="flex flex-col items-center lg:items-start space-y-4">
+          <div className="flex flex-col items-start lg:items-start space-y-4">
             <img src="/koot.png" alt="Koott Logo" className="h-12 md:h-16 brightness-0 invert" />
             <p className="text-sm md:text-base uppercase">Your companion in your healing journey</p>
             <div className="space-y-2">
@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
 
           {/* Column 2: Popular */}
-          <div className="flex flex-col items-center lg:items-start space-y-4">
+          <div className="flex flex-col items-start lg:items-start space-y-4">
             <h3 className="text-base md:text-lg font-bold uppercase">POPULAR</h3>
             <ul className="space-y-3 text-sm md:text-base">
               <li className="uppercase">PSYCHOLOGY INTERNSHIP <span className="text-green-400">(NEW)</span></li>
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Talk to Expert */}
-          <div className="flex flex-col items-center lg:items-start space-y-4">
+          <div className="flex flex-col items-start lg:items-start space-y-4">
             <h3 className="text-base md:text-lg font-bold uppercase">TALK TO EXPERT</h3>
             <ul className="space-y-3 text-sm md:text-base">
               <li className="uppercase">RELATIONSHIP COACH</li>
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
 
           {/* Column 4: Resources */}
-          <div className="flex flex-col items-center lg:items-start space-y-4">
+          <div className="flex flex-col items-start lg:items-start space-y-4">
             <h3 className="text-base md:text-lg font-bold uppercase">RESOURCES</h3>
             <ul className="space-y-3 text-sm md:text-base">
               <li className="uppercase">ABOUT US</li>
@@ -71,12 +71,12 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-gray-600">
-          <p className="text-xs md:text-sm text-center mb-4 md:mb-6 italic">
+          <p className="text-xs md:text-sm text-left md:text-center mb-4 md:mb-6 italic">
             "We are not a suicide prevention helpline. If you are feeling suicidal, we would suggest you immediately call up a suicide prevention helpline"
           </p>
-          <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-2 md:gap-4 text-xs md:text-sm">
+          <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-2 md:gap-4 text-xs md:text-sm">
             <p>© 2020-24 KOOTT WELLNESS PVT. LTD.</p>
-            <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+            <div className="flex flex-wrap justify-start md:justify-center gap-2 md:gap-4">
               <a href="#" className="hover:text-gray-300 transition-colors">Terms & Conditions</a>
               <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-gray-300 transition-colors">Therapy Agreement</a>
