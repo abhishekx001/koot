@@ -3,13 +3,13 @@ import React from "react";
 const RelatedConditions = () => {
   const conditions = [
     "Trauma",
-    "Grief", 
+    "Phobias", 
     "Addictions",
     "Anxiety",
     "Family Counselling",
     "Personality Dissorders",
     "Psychosis",
-    "Suicidal Tendencies"
+    "Postpartum Depression"
   ];
 
   return (

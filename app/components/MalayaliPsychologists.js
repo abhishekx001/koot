@@ -11,7 +11,7 @@ const MalayaliPsychologists = () => {
       <div className="w-full max-w-4xl bg-white rounded-lg shadow-xs p-6">
         {/* Main Heading */}
         <h2 className="text-lg md:text-xl font-bold text-black mb-8">
-          Here are some top online Malayali psychologists for depression treatment 👇
+          Here are some top online Malayali psychologists for Abuse Counselling 👇
         </h2>
         
         {/* Psychologist Profile 1 */}
@@ -66,7 +66,7 @@ const MalayaliPsychologists = () => {
             href="#" 
             className="text-blue-600 underline text-xs hover:text-blue-800 transition-colors"
           >
-            View more Malayali Therapist for Depression here
+            View more Malayali Therapist for Abuse Counselling Here
           </a>
         </div>
       </div>

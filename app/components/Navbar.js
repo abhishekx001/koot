@@ -46,10 +46,10 @@ const Navbar = () => {
     {
       name: "INDIVIDUALS",
       options: [
-        "SPECIFIC DISORDERS >",
-        "LIFE CRISIS/SPECIFIC EVENTS >",
-        "RELATIONSHIP ISSUES >",
-        "WORK RELATED ISSUES >"
+        "SPECIFIC DISORDERS",
+        "LIFE CRISIS/SPECIFIC EVENTS",
+        "RELATIONSHIP ISSUES",
+        "WORK RELATED ISSUES"
       ],
     },
     {
@@ -89,7 +89,7 @@ const Navbar = () => {
   ];
 
   const subCategories = {
-    "SPECIFIC DISORDERS >": [
+    "SPECIFIC DISORDERS": [
       "DEPRESSION",
       "EATING DISORDERS",
       "HYPOCHONDRIASIS",
@@ -104,7 +104,7 @@ const Navbar = () => {
       "SCHIZOPHRENIA",
       "SLEEP DISORDER"
     ],
-    "LIFE CRISIS/SPECIFIC EVENTS >": [
+    "LIFE CRISIS/SPECIFIC EVENTS": [
       "ABUSE",
       "CRISIS INTERVENTION",
       "EXISTENTIAL CRISIS",
@@ -113,13 +113,13 @@ const Navbar = () => {
       "CHRONIC ILLNESS",
       "SUICIDAL TENDENCIES"
     ],
-    "RELATIONSHIP ISSUES >": [
+    "RELATIONSHIP ISSUES": [
       "BEHAVIORAL HEALTH",
       "IMPROVING COMMUNICATION SKILLS",
       "LGBTQ+ COUNSELLING",
       "SEXUAL INTIMACY ISSUES"
     ],
-    "WORK RELATED ISSUES >": [
+    "WORK RELATED ISSUES": [
       "BOOSTING PRODUCTIVITY",
       "BURNOUT RECOVERY",
       "IMPROVING COMMUNICATION",
@@ -164,15 +164,17 @@ const Navbar = () => {
             <li key={index} className="relative">
               {item.options.length > 0 ? (
                 <div
-                  onMouseEnter={() => setOpenDropdown(index)}
+                  onMouseEnter={() => {
+                    setOpenDropdown(index);
+                  }}
                   onMouseLeave={() => {
                     // Add a small delay to prevent dropdown from closing immediately
                     setTimeout(() => {
-                      if (!document.querySelector('.dropdown-hover-area:hover')) {
+                      if (!document.querySelector('.dropdown-hover-area:hover, .sub-dropdown-hover-area:hover')) {
                         setOpenDropdown(null);
                         setOpenSubDropdown(null);
                       }
-                    }, 100);
+                    }, 250);
                   }}
                   className="relative"
                 >
@@ -196,7 +198,7 @@ const Navbar = () => {
                   </button>
                   {openDropdown === index && (
                         <div 
-                          className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50 dropdown-hover-area"
+                          className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg py-2 z-50 dropdown-hover-area"
                           onMouseEnter={() => {
                             setOpenDropdown(index);
                           }}
@@ -213,10 +215,12 @@ const Navbar = () => {
                             <div 
                               key={optionIndex} 
                               className="relative"
-                              onMouseEnter={() => option.includes('>') ? setOpenSubDropdown(option) : setOpenSubDropdown(null)}
-                              onMouseLeave={() => setOpenSubDropdown(null)}
+                              onMouseEnter={() => subCategories[option] ? setOpenSubDropdown(option) : setOpenSubDropdown(null)}
+                              onMouseLeave={() => {
+                                // Do not immediately close when leaving the row; parent container handles safe close
+                              }}
                             >
-                              {option.includes('>') ? (
+                              {subCategories[option] ? (
                                 <div className="px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs cursor-pointer">
                                   {option}
                                 </div>
@@ -226,23 +230,23 @@ const Navbar = () => {
                                 </Link>
                               )}
                               
-                              {/* Sub-dropdown for all categories with > */}
-                              {option.includes('>') && openSubDropdown === option && (
+                              {/* Sub-dropdown for any option present in subCategories */}
+                              {subCategories[option] && openSubDropdown === option && (
                                 <div 
-                                  className="absolute left-full top-0 ml-1 w-56 bg-white rounded-lg shadow-lg py-2 z-60 sub-dropdown-hover-area"
+                                  className="absolute left-full top-0 -ml-1 w-56 bg-white rounded-lg shadow-lg py-2 z-50 sub-dropdown-hover-area pointer-events-auto"
                                   onMouseEnter={() => setOpenSubDropdown(option)}
                                   onMouseLeave={() => {
                                     setTimeout(() => {
                                       if (!document.querySelector('.sub-dropdown-hover-area:hover')) {
                                         setOpenSubDropdown(null);
                                       }
-                                    }, 100);
+                                    }, 250);
                                   }}
                                 >
                                   {subCategories[option]?.map((subOption, subIndex) => (
                                     <Link
                                       key={subIndex}
-                                      href={subOption === "DEPRESSION" ? "/depression" : "/"}
+                                      href={subOption === "DEPRESSION" ? "/depression" : (subOption === "ABUSE" ? "/abuse" : "/")}
                                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs"
                                     >
                                       {subOption}
