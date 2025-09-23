@@ -5,21 +5,21 @@ const DepressionBlogs = () => {
     {
       id: 1,
       image: "/dep3.png",
-      title: "Only 25% of us take help, We Malayalees and our Depression!",
+      title: "Only 25% of us take help, We Malayalees and our Crisis!",
       snippet: "\"Depression is a physiological condition that needs to be managed in a normal way.\" The challenge li...",
       readMoreLink: "#"
     },
     {
       id: 2,
       image: "/depp2.png", 
-      title: "Everybody has depression nowadays | Celebrities on Depression",
+      title: "Everybody faces crises nowadays | Coping in Difficult Times",
       snippet: "Do we genuinely grasp the nature of depression, or do we often connect it with mere feelings of sadness? ...",
       readMoreLink: "#"
     },
     {
       id: 3,
       image: "/dipfooterup.png",
-      title: "Why do you need a Malayali psychologist to tackle depression better?",
+      title: "Why do you need a Malayali psychologist to tackle crises better?",
       snippet: "In a world where Malayalis are spread across many countries, the importance of mental health supp...",
       readMoreLink: "#"
     }
@@ -35,7 +35,7 @@ const DepressionBlogs = () => {
       <div className="max-w-6xl mx-auto">
         {/* Main Heading */}
         <h2 className="text-xl md:text-2xl font-bold text-black text-center mb-12">
-          Here are some interesting blogs for Malayalees on Depression
+          Here are some interesting blogs for Malayalees on Crisis Intervention
         </h2>
         
         {/* Blog Cards Grid */}

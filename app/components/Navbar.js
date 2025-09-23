@@ -246,7 +246,15 @@ const Navbar = () => {
                                   {subCategories[option]?.map((subOption, subIndex) => (
                                     <Link
                                       key={subIndex}
-                                      href={subOption === "DEPRESSION" ? "/depression" : (subOption === "ABUSE" ? "/abuse" : "/")}
+                                      href={
+                                        subOption === "DEPRESSION"
+                                          ? "/depression"
+                                          : subOption === "ABUSE"
+                                            ? "/abuse"
+                                            : subOption === "CRISIS INTERVENTION"
+                                              ? "/crisis-intervention"
+                                              : "/"
+                                      }
                                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs"
                                     >
                                       {subOption}

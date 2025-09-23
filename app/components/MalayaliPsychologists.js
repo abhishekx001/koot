@@ -11,7 +11,7 @@ const MalayaliPsychologists = () => {
       <div className="w-full max-w-4xl bg-white rounded-lg shadow-xs p-6">
         {/* Main Heading */}
         <h2 className="text-lg md:text-xl font-bold text-black mb-8">
-          Here are some top online Malayali psychologists for Abuse Counselling 👇
+          Here are some top online Malayali psychologists for Crisis Intervention 👇
         </h2>
         
         {/* Psychologist Profile 1 */}
@@ -51,7 +51,7 @@ const MalayaliPsychologists = () => {
             <h3 className="font-semibold text-black text-sm mb-1">
               Shuhaima Hanna Katti, Health Psychologist
             </h3>
-            <p className="text-black text-xs leading-relaxed line-clamp-3">
+            <p className="text-black text-xs leading-relaxed line-clamp-6">
               Shuhaima Hanna Katti is a Health Psychologist with a master's degree in Health Psychology with extensive training in Counselling Psychology from the University of Hyderabad. She has been working in different fields of mental health awareness sectors along with her studies for the past 3 years. She has gained field experience through her internships and workshops for therapy techniques. Her research area is the health and well-being of children and adolescents.
             </p>
           </div>
@@ -66,7 +66,7 @@ const MalayaliPsychologists = () => {
             href="#" 
             className="text-blue-600 underline text-xs hover:text-blue-800 transition-colors"
           >
-            View more Malayali Therapist for Abuse Counselling Here
+            View more Malayali Therapist for Crisis Intervention Counselling Here
           </a>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
-const RelatedConditions = () => {
-  const conditions = [
+const RelatedConditions = ({ title = "Related Conditions for Keralite's", items }) => {
+  const conditions = items && items.length > 0 ? items : [
     "Trauma",
     "Phobias", 
     "Addictions",
@@ -22,7 +22,7 @@ const RelatedConditions = () => {
       <div className="w-full max-w-4xl">
         {/* Main Heading */}
         <h2 className="text-lg md:text-xl font-bold text-black mb-8 text-left">
-          Related Conditions for Keralite's
+          {title}
         </h2>
         
         {/* Grid of Conditions */}
