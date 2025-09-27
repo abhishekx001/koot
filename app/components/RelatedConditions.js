@@ -2,14 +2,14 @@ import React from "react";
 
 const RelatedConditions = ({ title = "Related Conditions for Keralite's", items }) => {
   const conditions = items && items.length > 0 ? items : [
+    "PTSD",
+    "Behavioral Health",
+    "OCD",
     "Trauma",
-    "Phobias", 
-    "Addictions",
-    "Anxiety",
     "Family Counselling",
-    "Personality Dissorders",
-    "Psychosis",
-    "Postpartum Depression"
+    "Schizophrenia",
+    "Burnout Recovery",
+    "Boosting Productivity"
   ];
 
   return (

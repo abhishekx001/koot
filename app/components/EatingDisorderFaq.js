@@ -60,12 +60,27 @@ const eatingDisorderFaqItems = [
   },
 ];
 
-const DepressionFaq = () => {
+const EatingDisorderFaq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [activeTab, setActiveTab] = useState("Depression");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const toggleIndex = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
+
+  const getCurrentFaqItems = () => {
+    const items = activeTab === "Depression" ? depressionFaqItems : eatingDisorderFaqItems;
+    if (searchTerm) {
+      return items.filter(item => 
+        item.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.answer.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    return items;
+  };
+
+  const currentFaqItems = getCurrentFaqItems();
 
   return (
     <div
@@ -81,7 +96,7 @@ const DepressionFaq = () => {
             className="text-xl md:text-2xl font-bold text-black"
             style={{fontFamily: 'var(--font-quicksand), sans-serif'}}
           >
-            Frequently Asked Questions on Depression
+            Frequently Asked Questions on {activeTab}
           </h2>
           
           {/* Search Bar */}
@@ -89,17 +104,51 @@ const DepressionFaq = () => {
             <input
               type="text"
               placeholder="Looking for something?"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent w-64"
             />
             <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
           </div>
         </div>
+
+        {/* Tabs */}
+        <div className="flex space-x-6 mb-8 border-b border-gray-200">
+          <button
+            onClick={() => {
+              setActiveTab("Depression");
+              setActiveIndex(null);
+              setSearchTerm("");
+            }}
+            className={`pb-3 text-sm font-medium ${
+              activeTab === "Depression" 
+                ? "text-green-600 border-b-2 border-green-600" 
+                : "text-gray-500 hover:text-gray-700"
+            }`}
+          >
+            Depression
+          </button>
+          <button
+            onClick={() => {
+              setActiveTab("Eating Disorder");
+              setActiveIndex(null);
+              setSearchTerm("");
+            }}
+            className={`pb-3 text-sm font-medium ${
+              activeTab === "Eating Disorder" 
+                ? "text-green-600 border-b-2 border-green-600" 
+                : "text-gray-500 hover:text-gray-700"
+            }`}
+          >
+            Eating Disorder
+          </button>
+        </div>
         
         {/* Scrollable FAQ Container */}
         <div className="max-h-80 overflow-y-auto pr-2">
           {/* FAQ Items */}
-          {depressionFaqItems.map((item, index) => (
-            <div key={index} className="border-b border-gray-200 py-4">
+          {currentFaqItems.map((item, index) => (
+            <div key={index} className="border-b border-green-100 py-4">
               <button
                 className="flex justify-between items-center w-full text-left text-base font-normal focus:outline-none tracking-wide"
                 onClick={() => toggleIndex(index)}
@@ -118,10 +167,16 @@ const DepressionFaq = () => {
               )}
             </div>
           ))}
+          
+          {currentFaqItems.length === 0 && searchTerm && (
+            <div className="text-center py-8 text-gray-500">
+              No questions found matching "{searchTerm}"
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default DepressionFaq;
+export default EatingDisorderFaq;

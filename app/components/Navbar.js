@@ -140,8 +140,8 @@ const Navbar = () => {
         color: "#fff",
         padding: "12px 0",
         zIndex: 50,
-        background: "rgba(95, 55, 27, 0.15)",
-        backdropFilter: "blur(10px)",
+        background: "rgba(160, 82, 45, 0.12)",
+        backdropFilter: "none",
         fontFamily: 'var(--font-quicksand), sans-serif',
       }}
     >
@@ -253,7 +253,13 @@ const Navbar = () => {
                                             ? "/abuse"
                                             : subOption === "CRISIS INTERVENTION"
                                               ? "/crisis-intervention"
-                                              : "/"
+                                              : subOption === "EATING DISORDERS"
+                                                ? "/eating-disorder"
+                                                : subOption === "HYPOCHONDRIASIS"
+                                                  ? "/hypochondriasis"
+                                                  : subOption === "MOOD DISORDER"
+                                                    ? "/mood-disorder"
+                                                    : "/"
                                       }
                                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs"
                                     >

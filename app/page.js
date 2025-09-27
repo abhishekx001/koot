@@ -28,7 +28,7 @@ const Home = () => {
       <Footer/>
 
       {/* Social Media Icons - Fixed Position */}
-      <div className="fixed top-1/2 right-4 transform -translate-y-1/2 flex flex-col gap-4 text-gray-700 z-40">
+      <div className="fixed top-1/2 right-2 transform -translate-y-1/2 flex flex-col gap-4 text-gray-700 z-40">
         <a href="#" className="hover:text-green-600 transition-colors">
           <FaWhatsapp size={20} />
         </a>
