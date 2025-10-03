@@ -221,11 +221,11 @@ const Navbar = () => {
                               }}
                             >
                               {subCategories[option] ? (
-                                <div className="px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs cursor-pointer">
+                                <div className="px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs cursor-pointer hover:underline underline-offset-4">
                                   {option}
                                 </div>
                               ) : (
-                                <Link href="/" className="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs">
+                                <Link href="/" className="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs hover:underline underline-offset-4">
                                   {option}
                                 </Link>
                               )}
@@ -259,9 +259,15 @@ const Navbar = () => {
                                                   ? "/hypochondriasis"
                                                   : subOption === "MOOD DISORDER"
                                                     ? "/mood-disorder"
-                                                    : "/"
+                                                    : subOption === "OCD"
+                                                      ? "/ocd"
+                                                      :                                         subOption === "POSTPARTUM DEPRESSION"
+                                          ? "/postpartum"
+                                          : subOption === "PANIC ATTACKS"
+                                            ? "/panic-attacks"
+                                            : "/"
                                       }
-                                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs"
+                                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors text-xs hover:underline underline-offset-4"
                                     >
                                       {subOption}
                                     </Link>
@@ -356,7 +362,7 @@ const Navbar = () => {
                             ) : (
                               <Link
                                 href="/"
-                                className="block text-gray-600 hover:text-gray-800 transition-colors text-sm py-1"
+                                className="block text-gray-600 hover:text-gray-800 transition-colors text-sm py-1 hover:underline underline-offset-4"
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
                                 {option}
